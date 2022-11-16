@@ -12,7 +12,7 @@ public class SalesTaxApplication {
 
     public static void main(String[] args) throws IOException {
         FileUtils fileUtils = new FileUtils();
-        InputStream fileFromResource = fileUtils.getFileFromResource("shoppingbaskets/inputThird.txt");
+        InputStream fileFromResource = fileUtils.getInputStreamFromFile("shoppingbaskets/inputThird.txt");
 
         List<ItemDetails> itemDetailsList = fileUtils.readInputBasketContent(fileFromResource);
 

@@ -13,13 +13,16 @@ public class ItemDetailsFacade {
     private static final String ITEM_IMPORTED_REGEX = "imported";
 
     public static void fetchItemDetails(List<ItemDetails> itemDetailsList, String item) {
-        ItemDetails itemDetails = RegexUtils.fetchItemDetails(item);
+        RegexUtils regexUtils = new RegexUtils();
+        ItemTaxCalculator itemTaxCalculator = new ItemTaxCalculator();
+
+        ItemDetails itemDetails = regexUtils.fetchItemDetails(item);
         String itemDescription = itemDetails.getDescription();
 
         setTaxExemptValue(itemDetails, itemDescription);
         setItemImportValue(itemDetails, itemDescription);
 
-        ItemTaxCalculator.calculateItemTax(itemDetails);
+        itemTaxCalculator.calculateItemTax(itemDetails);
 
         itemDetailsList.add(itemDetails);
     }
@@ -37,6 +40,7 @@ public class ItemDetailsFacade {
     }
 
     public static void printItemDetailsReceipt(List<ItemDetails> itemDetailsList) {
+        MathUtils mathUtils = new MathUtils();
         double totalItemSalesTax = 0.0;
         double totalItemPriceAfterTax = 0.0;
         for (ItemDetails itemDetails : itemDetailsList) {
@@ -46,7 +50,7 @@ public class ItemDetailsFacade {
             totalItemPriceAfterTax = totalItemPriceAfterTax + itemDetails.getPriceAfterTax();
 
         }
-        System.out.println("Sales Taxes: " + MathUtils.roundPrice(totalItemSalesTax));
-        System.out.println("Total: " + MathUtils.roundPrice(totalItemPriceAfterTax));
+        System.out.println("Sales Taxes: " + mathUtils.roundPrice(totalItemSalesTax));
+        System.out.println("Total: " + mathUtils.roundPrice(totalItemPriceAfterTax));
     }
 }

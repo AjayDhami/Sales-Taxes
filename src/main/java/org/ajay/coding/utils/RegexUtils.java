@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class RegexUtils {
     private static final String ITEM_INPUT_REGEX = "(\\d+) ([\\w\\s]+ ).*at (\\d+.\\d+)";
 
-    public static ItemDetails fetchItemDetails(String input) {
+    public ItemDetails fetchItemDetails(String input) {
         Pattern pattern = Pattern.compile(ITEM_INPUT_REGEX);
         Matcher matcher = pattern.matcher(input);
         matcher.find();
