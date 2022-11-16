@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FileUtils {
 
-    public InputStream getFileFromResource(String fileName) {
+    public InputStream getInputStreamFromFile(String fileName) {
         ClassLoader classLoader = this.getClass().getClassLoader();
         InputStream resourceAsStream = classLoader.getResourceAsStream(fileName);
 
