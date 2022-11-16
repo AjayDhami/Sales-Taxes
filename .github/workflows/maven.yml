@@ -35,4 +35,20 @@ jobs:
           cache: maven
 
       - name: Run Test Cases
-        run: mvn clean test
+        run: mvn clean '-Dtest=*Test' -Djacoco.destFile=target/jacoco.exec test
+
+      - name: Upload jacoco exec test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: tests-jacoco
+          path: target/jacoco.exec
+
+      - name: Tests Report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Maven Tests Report
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+          fail-on-error: true
+
