@@ -1,11 +1,14 @@
-package org.ajay.coding.taxCalculator;
+package org.ajay.coding.service;
 
-import org.ajay.coding.model.ItemDetails;
+import lombok.extern.slf4j.Slf4j;
+import org.ajay.coding.entities.ItemDetails;
 import org.ajay.coding.utils.MathUtils;
 
-public class ItemTaxCalculator {
+@Slf4j
+public class ItemTaxCalculatorService {
 
     public void calculateItemTax(ItemDetails itemDetails) {
+        log.info("Calculating tax applicable to the item");
         MathUtils mathUtils = new MathUtils();
 
         double tax = 0.00;
