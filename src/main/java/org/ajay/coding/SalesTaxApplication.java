@@ -11,8 +11,10 @@ import java.util.List;
 public class SalesTaxApplication {
 
     public static void main(String[] args) throws IOException {
+        String inputFile = args.length == 1 ? args[0] : "shoppingbaskets/inputFirst.txt";
+
         FileUtils fileUtils = new FileUtils();
-        InputStream fileFromResource = fileUtils.getInputStreamFromFile("shoppingbaskets/inputThird.txt");
+        InputStream fileFromResource = fileUtils.getInputStreamFromFile(inputFile);
 
         List<ItemDetails> itemDetailsList = fileUtils.readInputBasketContent(fileFromResource);
 
