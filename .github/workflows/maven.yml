@@ -21,3 +21,18 @@ jobs:
         
     - name: Build with Maven
       run: mvn clean package
+
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: '1.8'
+          distribution: 'adopt'
+          cache: maven
+
+      - name: Run Test Cases
+        run: mvn clean test
