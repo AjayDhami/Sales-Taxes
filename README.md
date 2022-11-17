@@ -8,8 +8,12 @@ imported goods at a rate of 5%, with no exemptions.
 **Tools and Technologies used:**
   - Java
   - Maven
+  - Docker
+  - Log4j2
+  - Lombok
+  - Junit
 
-## Steps to Run
+## Steps to Run Application
 1) Install Java 8 and Maven.
 2) Clone the repo or download the code as zip file using the [link](https://github.com/AjayDhami/Sales-Taxes).
 3) Run the command: `mvn clean package` to install all the required dependencies.
@@ -24,3 +28,9 @@ to pass your desired **filepath** as program arguments while running application
 ```java -jar sales-taxes-jar-with-dependencies.jar <FILE_PATH>```
 - **Note:** Here, `<FILE_PATH>` is optional. 
 - **Example:** `java -jar target/sales-taxes-jar-with-dependencies.jar shoppingbaskets/inputThird.txt`
+
+**Executing Docker Image:**
+1) Navigate to directory where `Dockerfile` is located.
+2) Build the Docker image using Dockerfile: `docker build -t sales-taxes-jar-with-dependencies.jar .`
+3) Run the Docker image: `docker run sales-taxes-jar-with-dependencies.jar <FILE_PATH>`. Here <FILE_PATH> is optional.
+Example: `docker run sales-taxes-jar-with-dependencies.jar shoppingbaskets/inputThird.txt`
