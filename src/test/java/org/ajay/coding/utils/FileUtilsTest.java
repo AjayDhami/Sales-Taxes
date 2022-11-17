@@ -1,6 +1,6 @@
 package org.ajay.coding.utils;
 
-import org.ajay.coding.model.ItemDetails;
+import org.ajay.coding.entities.ItemDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
