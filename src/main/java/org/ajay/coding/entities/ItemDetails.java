@@ -1,4 +1,4 @@
-package org.ajay.coding.model;
+package org.ajay.coding.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

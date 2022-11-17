@@ -1,17 +1,17 @@
-package org.ajay.coding.taxCalculator;
+package org.ajay.coding.service;
 
-import org.ajay.coding.model.ItemDetails;
+import org.ajay.coding.entities.ItemDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ItemTaxCalculatorTest {
-    private ItemTaxCalculator itemTaxCalculator;
+class ItemTaxCalculatorServiceTest {
+    private ItemTaxCalculatorService itemTaxCalculatorService;
 
     @BeforeEach
     public void setUp() {
-        itemTaxCalculator = new ItemTaxCalculator();
+        itemTaxCalculatorService = new ItemTaxCalculatorService();
     }
 
     @Test
@@ -24,7 +24,7 @@ class ItemTaxCalculatorTest {
                 .isImported(true)
                 .build();
 
-        itemTaxCalculator.calculateItemTax(itemDetails);
+        itemTaxCalculatorService.calculateItemTax(itemDetails);
 
         assertEquals(4.2, itemDetails.getItemSalesTaxes());
         assertEquals(32.19, itemDetails.getPriceAfterTax());
