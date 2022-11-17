@@ -31,6 +31,6 @@ to pass your desired **filepath** as program arguments while running application
 
 **Executing Docker Image:**
 1) Navigate to directory where `Dockerfile` is located.
-2) Build the Docker image using Dockerfile: `docker build -t sales-taxes-jar-with-dependencies.jar .`
-3) Run the Docker image: `docker run sales-taxes-jar-with-dependencies.jar <FILE_PATH>`. Here <FILE_PATH> is optional.
-Example: `docker run sales-taxes-jar-with-dependencies.jar shoppingbaskets/inputThird.txt`
+2) Build the Docker image using Dockerfile: `docker build -t sales-taxes-calculator .`
+3) Run the Docker image: `docker run sales-taxes-calculator <FILE_PATH>`. Here *<FILE_PATH>* is optional.
+Example: `docker run sales-taxes-calculator shoppingbaskets/inputThird.txt`
