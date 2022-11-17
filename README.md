@@ -1,10 +1,12 @@
-# Sales-Taxes
+# Sales-Taxes 
+
+[![Sales Taxes Application Workflow](https://github.com/AjayDhami/Sales-Taxes/actions/workflows/maven.yml/badge.svg)](https://github.com/AjayDhami/Sales-Taxes/actions/workflows/maven.yml)
 
 > Sales Taxes application is developed using Java. Here, the application takes receipt file for various types of products and then print out the receipt details
 by including tax as per condition on certain goods. Types of taxes applicable to goods are **Basic Sales Tax** and **Additional Sales Tax**. Basic sales 
 tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt. Additional sales tax is applicable on all 
 imported goods at a rate of 5%, with no exemptions.
- 
+
 **Tools and Technologies used:**
   - Java
   - Maven
